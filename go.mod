@@ -1,4 +1,4 @@
-module github.com/Lesion45/protos
+module github.com/Lesion45/protos/v1
 
 go 1.21.4
 

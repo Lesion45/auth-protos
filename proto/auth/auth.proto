@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "lesion.auth.v1;auth";
+
+service Auth {
+  rpc Register (RegisterRequest) returns (RegisterResponse);
+  rpc Login (LoginRequest) returns (LoginResponse);
+}
+
+message RegisterRequest {
+  string email = 1; // Email of the user
+  string password = 2; // Password of the user
+}
+
+message RegisterResponse {
+  string user_id = 1; // ID of the registered user
+}
+
+message LoginRequest {
+  string email = 1; // Email of the user
+  string password = 2; // Password of the user
+  string app_id = 3; // UUID of the app that user is trying to log in to
+}
+
+message LoginResponse {
+  string token = 1; // Auth token of the logged in user
+}

@@ -31,8 +31,8 @@ message LoginResponse {
 
 message RegisterAppRequest {
   string name = 1; // Name of the application
-  string secret = 2; // Secret key of the application
-  string key = 3; // Key of the admin. Provides privilege to add a new application
+  string app_secret = 2; // Secret key of the application
+  string admin_key = 3; // Key of the admin. Provides privilege to add a new application
 }
 
 message RegisterAppResponse {

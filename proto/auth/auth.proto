@@ -7,7 +7,6 @@ option go_package = "lesion.auth.v1;auth";
 service Auth {
   rpc Register (RegisterRequest) returns (RegisterResponse);
   rpc Login (LoginRequest) returns (LoginResponse);
-  rpc RegisterApp (RegisterAppResponse) returns (RegisterAppResponse);
 }
 
 message RegisterRequest {
@@ -22,19 +21,8 @@ message RegisterResponse {
 message LoginRequest {
   string email = 1; // Email of the user
   string password = 2; // Password of the user
-  string app_id = 3; // UUID of the app that user is trying to log in to
 }
 
 message LoginResponse {
   string token = 1; // Auth token of the logged in user
-}
-
-message RegisterAppRequest {
-  string name = 1; // Name of the application
-  string app_secret = 2; // Secret key of the application
-  string admin_key = 3; // Key of the admin. Provides privilege to add a new application
-}
-
-message RegisterAppResponse {
-  string app_id = 1; // UID of the application
 }
